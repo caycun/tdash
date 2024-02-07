@@ -53,7 +53,7 @@ fn main() {
             }
         });
 
-        handles.push(update_ui);
+        handles.push(draw_ui);
 
         for item in parsed_contents {
 
