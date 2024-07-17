@@ -1,0 +1,11 @@
+/home/caycun/development/tdash/target/debug/deps/libpancurses-d79a1ad47d4733a2.rmeta: /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/lib.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/input.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/attributes.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/colorpair.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/unix/mod.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/unix/constants.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/window.rs
+
+/home/caycun/development/tdash/target/debug/deps/pancurses-d79a1ad47d4733a2.d: /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/lib.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/input.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/attributes.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/colorpair.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/unix/mod.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/unix/constants.rs /home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/window.rs
+
+/home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/lib.rs:
+/home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/input.rs:
+/home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/attributes.rs:
+/home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/colorpair.rs:
+/home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/unix/mod.rs:
+/home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/unix/constants.rs:
+/home/caycun/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pancurses-0.17.0/src/window.rs:
