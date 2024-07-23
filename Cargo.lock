@@ -575,6 +575,7 @@ dependencies = [
  "crossterm",
  "pancurses",
  "ratatui",
+ "serde",
  "serde_yaml",
 ]
 

@@ -1,9 +1,8 @@
-use std::collections::BTreeMap;
 use std::fs::File;
 use std::io::Read;
 use std::path::PathBuf;
 
-pub fn parse(file_name: PathBuf) -> BTreeMap<String, String> {
+pub fn parse(file_name: PathBuf) -> String {
     let file = File::open(file_name);
     let mut contents = String::new();
 
@@ -13,5 +12,7 @@ pub fn parse(file_name: PathBuf) -> BTreeMap<String, String> {
         Err(_error) => panic!()
     };
 
-    serde_yaml::from_str(&contents).unwrap()
+
+    contents
+
 }
