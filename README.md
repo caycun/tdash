@@ -13,18 +13,36 @@ GIF HERE
 
 #### Step  1
 
-Create a yaml file with the commands you want to use
+Create a .yaml file with the commands you want to use
 
 #### Example:
 
 ```
-one: node index.js
-two: cargo run
-three: ping github.com
+- command: "ping google.com"
+size: 40
+direction: 1
+- command: "ping facebook.com"
+size: 20
+direction: 2
+- command: "ping youtube.com"
+size: 10
+direction: 2
 ```
+
+Currently, direction system is not implemented yet. Direction is whether the screen should be horizontal[1] or vertical[2]
 
 #### Step 2
 
 Run the command:
 `cargo run -- --file <yaml_file_name>`
+
+## Keybinds
+
+| Function             | Key                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Focus screen | `f + number`|
+| Full screen mode | `Enter` |
+| Exit full screen | `Esc`|
+| Quit tdash | `q` |
+
 
