@@ -45,7 +45,7 @@ Currently, direction system is not implemented yet. Direction is whether the scr
 #### Step 3
 
 Run the command:
-`tdash -file <yaml_file_name>`
+`tdash --file <yaml_file_name>`
 
 
 
