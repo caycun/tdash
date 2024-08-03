@@ -5,8 +5,7 @@ Create a dashboard where you can see all output from different terminal commands
 
 
 ## Demo
-
-GIF HERE
+![](https://media.discordapp.net/attachments/1055343147833626757/1269101410205827143/Showcase.gif?ex=66aed64a&is=66ad84ca&hm=9c2075c67728ac9a43e2b7a97a280c925452b4ca05613a44c7fc2441ff8acc25&=)
 
 
 ## How to use
