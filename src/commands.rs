@@ -1,11 +1,15 @@
-use crate::structs::{OutputData, Cmd};
+use crate::structs::{Cmd, OutputData};
 use ratatui::widgets::ScrollbarState;
 use std::io::{BufRead, BufReader};
 use std::process::{Command, Stdio};
 use std::sync::mpsc::Sender;
 use std::thread;
 
-pub fn execute_commands(config: Vec<Cmd>, tx: Sender<OutputData>, handles: &mut Vec<thread::JoinHandle<()>>) {
+pub fn execute_commands(
+    config: Vec<Cmd>,
+    tx: Sender<OutputData>,
+    handles: &mut Vec<thread::JoinHandle<()>>,
+) {
     for item in config {
         let thread_tx = tx.clone();
         let handle = thread::spawn(move || {
@@ -29,14 +33,16 @@ pub fn execute_commands(config: Vec<Cmd>, tx: Sender<OutputData>, handles: &mut 
                         _direction: item.direction,
                         size: item.size,
                         data: data.clone(),
-                        vertical_scroll_state: ScrollbarState::new(data.len()).content_length(data.len()).viewport_content_length(1),
+                        vertical_scroll_state: ScrollbarState::new(data.len())
+                            .content_length(data.len())
+                            .viewport_content_length(1),
                     };
 
                     match thread_tx.send(output_data) {
                         Ok(_) => (),
                         Err(_e) => {
                             // Handle the error properly
-                        },
+                        }
                     }
                 }
             }

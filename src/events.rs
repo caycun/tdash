@@ -1,7 +1,7 @@
+use crate::App;
+use ratatui::crossterm::event::{self, Event, KeyCode};
 use std::io;
 use std::time::Duration;
-use ratatui::crossterm::event::{self, Event, KeyCode};
-use crate::App;
 
 pub fn handle_events(app: &mut App) -> io::Result<bool> {
     if event::poll(Duration::from_millis(50))? {
@@ -21,8 +21,11 @@ pub fn handle_events(app: &mut App) -> io::Result<bool> {
                 }
             } else if key.kind == event::KeyEventKind::Press && key.code == KeyCode::Enter {
                 app.full_screen = true;
-            } else if key.kind == event::KeyEventKind::Press && key.code == KeyCode::Esc && app.full_screen {
-                    app.full_screen = false;
+            } else if key.kind == event::KeyEventKind::Press
+                && key.code == KeyCode::Esc
+                && app.full_screen
+            {
+                app.full_screen = false;
             }
         }
     }

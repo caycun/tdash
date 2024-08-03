@@ -1,9 +1,6 @@
 use crate::{structs::OutputData, App};
 
-use ratatui::{
-    prelude::*,
-    widgets::*,
-};
+use ratatui::{prelude::*, widgets::*};
 
 pub fn ui(frame: &mut Frame, mut collections: Vec<OutputData>, app: &App) {
     let layout = Layout::default()
@@ -11,9 +8,9 @@ pub fn ui(frame: &mut Frame, mut collections: Vec<OutputData>, app: &App) {
         .margin(1)
         .constraints(
             collections
-            .iter()
-            .map(|item| Constraint::Percentage(item.size as u16))
-            .collect::<Vec<_>>(),
+                .iter()
+                .map(|item| Constraint::Percentage(item.size as u16))
+                .collect::<Vec<_>>(),
         )
         .split(frame.size());
     for (index, item) in collections.iter_mut().enumerate() {
@@ -61,20 +58,15 @@ pub fn ui(frame: &mut Frame, mut collections: Vec<OutputData>, app: &App) {
             *state.offset_mut() = 0;
         }
 
-
-
         frame.render_stateful_widget(list, layout[index], &mut state);
 
         frame.render_stateful_widget(
             scrollbar,
             layout[index].inner(Margin {
                 vertical: 1,
-                horizontal: 0
+                horizontal: 0,
             }),
             &mut item.vertical_scroll_state,
         );
-
     }
 }
-
-

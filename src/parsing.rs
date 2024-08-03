@@ -7,12 +7,11 @@ pub fn parse(file_name: PathBuf) -> String {
     let mut contents = String::new();
 
     match file {
-       Ok(mut result) =>  result.read_to_string(&mut contents)
-        .expect("Unable to read file"),
-        Err(_error) => panic!()
+        Ok(mut result) => result
+            .read_to_string(&mut contents)
+            .expect("Unable to read file"),
+        Err(_error) => panic!(),
     };
 
-
     contents
-
 }

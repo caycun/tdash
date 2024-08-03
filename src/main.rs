@@ -1,18 +1,15 @@
-mod ui;
+mod commands;
+mod events;
 mod parsing;
 mod structs;
-mod events;
-mod commands;
+mod ui;
 
 use crate::commands::execute_commands;
-use crate::ui::ui;
-use crate::structs::{Args, Cmd, OutputData};
-use crate::parsing::parse;
 use crate::events::handle_events;
+use crate::parsing::parse;
+use crate::structs::{Args, Cmd, OutputData};
+use crate::ui::ui;
 use clap::Parser;
-use std::io::{self, stdout};
-use std::sync::mpsc::{self, Receiver, Sender};
-use std::thread;
 use ratatui::{
     crossterm::{
         terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
@@ -20,27 +17,32 @@ use ratatui::{
     },
     prelude::*,
 };
-
+use std::io::{self, stdout};
+use std::sync::mpsc::{self, Receiver, Sender};
+use std::thread;
 
 #[derive(Default)]
 struct App {
     current_window: u8,
     _vertical_scroll: u8,
-    full_screen: bool
+    full_screen: bool,
 }
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
     if !args.file.exists() {
         println!("{:?} does not exist", &args.file);
-        Err(Box::new(io::Error::new(io::ErrorKind::NotFound, "File not found")))
+        Err(Box::new(io::Error::new(
+            io::ErrorKind::NotFound,
+            "File not found",
+        )))
     } else {
         enable_raw_mode()?;
         stdout().execute(EnterAlternateScreen)?;
         let mut app = App {
             current_window: 0,
             _vertical_scroll: 0,
-            full_screen: false
+            full_screen: false,
         };
         let mut terminal = Terminal::new(CrosstermBackend::new(stdout()))?;
         let (tx, rx): (Sender<OutputData>, Receiver<OutputData>) = mpsc::channel();
@@ -89,8 +91,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         execute_commands(config, tx, &mut handles);
 
-        handles.into_iter().for_each(|handle| handle.join().unwrap());
+        handles
+            .into_iter()
+            .for_each(|handle| handle.join().unwrap());
         Ok(())
     }
 }
-

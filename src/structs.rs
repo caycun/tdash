@@ -1,6 +1,6 @@
+use clap::Parser;
 use ratatui::widgets::ScrollbarState;
 use serde::{Deserialize, Serialize};
-use clap::Parser;
 use std::path::PathBuf;
 
 #[derive(Parser, Debug)]
@@ -16,7 +16,7 @@ pub struct Args {
 pub struct Cmd {
     pub command: String,
     pub size: u8,
-    pub direction: u8
+    pub direction: u8,
 }
 
 #[derive(Debug, Clone)]
@@ -26,4 +26,3 @@ pub struct OutputData {
     pub data: Vec<String>,
     pub vertical_scroll_state: ScrollbarState,
 }
-
