@@ -21,7 +21,7 @@ pub struct Cmd {
 
 #[derive(Debug, Clone)]
 pub struct OutputData {
-    pub direction: u8,
+    pub _direction: u8,
     pub size: u8,
     pub data: Vec<String>,
     pub vertical_scroll_state: ScrollbarState,

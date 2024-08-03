@@ -26,7 +26,7 @@ pub fn execute_commands(config: Vec<Cmd>, tx: Sender<OutputData>, handles: &mut 
                     data.push(line.unwrap());
 
                     let output_data = OutputData {
-                        direction: item.direction,
+                        _direction: item.direction,
                         size: item.size,
                         data: data.clone(),
                         vertical_scroll_state: ScrollbarState::new(data.len()).content_length(data.len()).viewport_content_length(1),

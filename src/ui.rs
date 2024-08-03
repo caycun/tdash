@@ -4,7 +4,6 @@ use ratatui::{
     prelude::*,
     widgets::*,
 };
-use style::Styled;
 
 pub fn ui(frame: &mut Frame, mut collections: Vec<OutputData>, app: &App) {
     let layout = Layout::default()
@@ -53,7 +52,7 @@ pub fn ui(frame: &mut Frame, mut collections: Vec<OutputData>, app: &App) {
         let mut available_height = layout[index].height as usize - 2;
 
         if app.full_screen {
-            available_height = frame.size().height as usize - 2 as usize;
+            available_height = frame.size().height as usize - 2_usize;
         }
 
         if item.data.len() > available_height {

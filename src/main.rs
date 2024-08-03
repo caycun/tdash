@@ -25,7 +25,7 @@ use ratatui::{
 #[derive(Default)]
 struct App {
     current_window: u8,
-    vertical_scroll: u8,
+    _vertical_scroll: u8,
     full_screen: bool
 }
 
@@ -33,13 +33,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let args = Args::parse();
     if !args.file.exists() {
         println!("{:?} does not exist", &args.file);
-        return Err(Box::new(io::Error::new(io::ErrorKind::NotFound, "File not found")));
+        Err(Box::new(io::Error::new(io::ErrorKind::NotFound, "File not found")))
     } else {
         enable_raw_mode()?;
         stdout().execute(EnterAlternateScreen)?;
         let mut app = App {
             current_window: 0,
-            vertical_scroll: 0,
+            _vertical_scroll: 0,
             full_screen: false
         };
         let mut terminal = Terminal::new(CrosstermBackend::new(stdout()))?;

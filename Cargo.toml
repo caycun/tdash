@@ -1,5 +1,10 @@
 [package]
 name = "tdash"
+description = "Create a dashboard where you can see all output from different terminal commands in a layout."
+license = "MIT"
+keywords = ["terminal", "dashboard", "output", "layout", "tui"]
+repository = "https://github.com/caycun/tdash"
+readme = "README.md"
 version = "0.1.0"
 edition = "2021"
 
