@@ -55,6 +55,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let mut collections: Vec<OutputData> = Vec::new();
             let mut running = true;
             while running {
+
                 let id = rx.recv().unwrap();
                 if collections.is_empty() {
                     collections.push(id.clone());
