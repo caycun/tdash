@@ -55,7 +55,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let mut collections: Vec<OutputData> = Vec::new();
             let mut running = true;
             while running {
-
+                running = handle_events(&mut app).unwrap();
                 let id = rx.recv().unwrap();
                 if collections.is_empty() {
                     collections.push(id.clone());
@@ -82,7 +82,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 }
 
                 terminal.draw(|f| ui(f, collections.clone(), &app)).unwrap();
-                running = handle_events(&mut app).unwrap();
             }
             disable_raw_mode().unwrap();
             stdout().execute(LeaveAlternateScreen).unwrap();
